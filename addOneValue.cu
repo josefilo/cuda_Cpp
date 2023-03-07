@@ -44,13 +44,13 @@ int main(){
 
     cudaStatus = cudaMemcpy(device_a, &a, size, cudaMemcpyHostToDevice);
     if(cudaStatus != cudaSuccess){
-        cout << "cudaMemcpy device_a to a failed!";
+        cout << "cudaMemcpy &a to device_a failed!";
         return 1;
     }
 
     cudaStatus = cudaMemcpy(device_b, &b, size, cudaMemcpyHostToDevice);
     if(cudaStatus != cudaSuccess){
-        cout << "cudaMemcpy device_b to b failed!";
+        cout << "cudaMemcpy &b to device_b failed!";
         return 1;
     }
 
