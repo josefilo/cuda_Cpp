@@ -31,21 +31,21 @@ int main()
     CudaStatus = cudaMalloc((void**)&device_a, size);
     if(CudaStatus != cudaSuccess)
     {
-        cout << "Error al reservar memoria en el dispositivo" << endl;
+        cout << "cudaMalloc failed" << "\n";
         return 1;
     }
 
     CudaStatus = cudaMalloc((void**)&device_b, size);
     if(CudaStatus != cudaSuccess)
     {
-        cout << "Error al reservar memoria en el dispositivo" << endl;
+        cout << "cudaMalloc failed" << "\n";
         return 1;
     }
 
     CudaStatus = cudaMemcpy(device_a, host_a, size, cudaMemcpyHostToDevice);
     if(CudaStatus != cudaSuccess)
     {
-        cout << "Error al copiar datos del host al dispositivo" << endl;
+        cout << "cudaMalloc failed" << "\n";
         return 1;
     }
 
@@ -55,7 +55,7 @@ int main()
     CudaStatus = cudaMemcpy(host_b, device_b, size, cudaMemcpyDeviceToHost);
     if(CudaStatus != cudaSuccess)
     {
-        cout << "Error al copiar datos del dispositivo al host" << endl;
+        cout << "cudaMalloc failed" << "\n";
         return 1;
     }
 
