@@ -14,7 +14,7 @@ int main(){
     printf("Hello World!\n");
     meuKernel <<<2,2>>>();
     /*É preciso colocar para que a CPU espere a GPU terminar,
-    se eu não colocar o programa terminar sem dar tempo da GPU Imprimir os dados*/
+    caso não coloque, o programa termina antes que a GPU imprima os dados*/
     cudaDeviceSynchronize();
     return 0;
 }
